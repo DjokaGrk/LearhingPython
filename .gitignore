@@ -1,0 +1,4 @@
+# Ingore pdf docs.
+*.pdf
+
+# Ignore files
