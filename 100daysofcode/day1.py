@@ -1,0 +1,11 @@
+# print(name)
+# print(len(name))
+# print(len(input("kako ti je ime?")))
+
+# username = input("kako ti je ime? ")
+# lenght = len(username)
+# print(lenght)
+print("dobrodosli u band generator")
+city = input("gde si rodjen?\n")
+pet = input("kako ti se zvao pet?\n")
+print("tvoj band se moze zvati: " + city + " " + pet)
