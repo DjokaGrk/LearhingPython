@@ -1,4 +1,3 @@
-# print(type(12.23))
 # print(type(True))
 #
 # name = input("enter your name: ")
@@ -14,13 +13,12 @@
 # print(type(string))
 # print(type(bool))
 # print(type(float))
-#
-print(3 * 3 + 3 / 3 - 3)
 
-print(3 * (3 + 3) / 3 - 3)
+# print(3 * (3 + 3) / 3 - 3)
 
-tezina_bmi = print(input("koja je tvoja tezina"))
-visina_bmi = print(input(("koja je tvoja visina")))
-tezina_bmi = int(tezina_bmi)
-bmi = int(tezina_bmi) / int(visina_bmi**2)
-print(round(bmi, 2))
+tezina_bmi = float(input("koja je tvoja tezina "))
+visina_bmi = float(input("koja je tvoja visina "))
+bmi = tezina_bmi / (visina_bmi**2)
+print(f"tvoj bmi je {bmi:.2f}")
+# print(tezina_bmi, visina_bmi)
+# print(f"tvoj bmi je: {tezina_bmi + visina_bmi}")
