@@ -26,3 +26,6 @@ wel = "welcome to the tip calculator"
 bill = float(input("koliko je racun "))
 tip = float(input("koliko bi hteo da je tip? 10, 12, 15? "))
 split = float(input("koliko ljudi deli racun "))
+
+racun = round((bill * tip) / split, 2)
+print(f"treba svako od vas dati po {racun}")
