@@ -52,20 +52,26 @@ print("welcome to piza delivery")
 size = input("what size do u wonna take: s, m , l? ")
 pepperoni = input("do u wonna pepperoni? y or n? ")
 cheese = input("do you wonna extra cheese? y or n? ")
-
+bill = 0
 # pizza size
 if size == "s":
     bill = 15
+    # pepperoni
     if pepperoni == "y":
         bill += 2
 elif size == "m":
     bill = 20
+    # pepperoni
+    if pepperoni == "y":
+        bill += 3
+elif size == "l":
+    bill = 25
+    # pepperoni
     if pepperoni == "y":
         bill += 3
 else:
-    bill = 25
-    if pepperoni == "y":
-        bill += 3
+    print("nesto ste pogresili")
+# extra cheese
 if cheese == "y":
     bill += 1
 print(f"your total bill is {bill}$")
