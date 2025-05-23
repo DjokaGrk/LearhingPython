@@ -22,10 +22,12 @@
 # print(f"tvoj bmi je {bmi:.2f}")
 # print(tezina_bmi, visina_bmi)
 # print(f"tvoj bmi je: {tezina_bmi + visina_bmi}")
-wel = "welcome to the tip calculator"
-bill = float(input("koliko je racun "))
-tip = float(input("koliko bi hteo da je tip? 10, 12, 15? "))
-split = float(input("koliko ljudi deli racun "))
+print("welcome to the tip calculator")
+bill = float(input("koliko je racun? $"))
+tip = int(input("koliko bi hteo da je tip? 10, 12, 15? "))
+total_tip = bill * (tip / 100)
+total_bill = bill + total_tip
+split = int(input("koliko ljudi deli racun "))
 
-racun = round((bill * tip) / split, 2)
-print(f"treba svako od vas dati po {racun}")
+racun = round(total_bill / split, 2)
+print(f"treba svako od vas {split} treba dati po {racun} dolara")
