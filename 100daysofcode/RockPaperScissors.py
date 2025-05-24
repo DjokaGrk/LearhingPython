@@ -34,7 +34,9 @@ print(f"\nyou choose\n{choices[choice]}")
 print(f"\ncpu choose\n{choices[cpu_choice]}")
 
 # ko pobedjuje
-if choice == cpu_choice:
+if choice < 0 or >=3:
+    print("invalid number , try again")
+elif choice == cpu_choice:
     print("its a draw")
 elif (
     (choice == 0 and cpu_choice == 2)
