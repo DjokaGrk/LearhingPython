@@ -29,25 +29,9 @@ choice = int(
 )
 choices = [rock, paper, scissors]
 cpu_choice = random.randint(0, 2)
-# prikaz slika
-if choice == 0:
-    print("you choose")
-    print(rock)
-elif choice == 1:
-    print("you choose")
-    print(paper)
-else:
-    print("you choose")
-    print(scissors)
-if cpu_choice == 0:
-    print("cpu choose")
-    print(rock)
-elif cpu_choice == 1:
-    print("cpu choose")
-    print(paper)
-else:
-    print("cpu choose")
-    print(scissors)
+
+print(f"\nyou choose\n{choices[choice]}")
+print(f"\ncpu choose\n{choices[cpu_choice]}")
 
 # ko pobedjuje
 if choice == cpu_choice:
