@@ -69,15 +69,15 @@ nr_numbers = int(input("How many numbers would you like?\n"))
 # print(f"Your weak password is: {password_list}")
 
 # hard lvl password generator
-password_list = []
-for char in range(0, nr_letters):
-    password_list += random.choice(letters)
-for char in range(0, nr_symbols):
-    password_list += random.choice(symbols)
-for char in range(0, nr_numbers):
-    password_list += random.choice(numbers)
-print(f"Your weak password is: {password_list}")
-random.shuffle(password_list)
-print(password_list)
-str_password = "".join(password_list)
-print(f"Your strong password is: {str_password}")
+# password_list = []
+# for char in range(0, nr_letters):
+#     password_list += random.choice(letters)
+# for char in range(0, nr_symbols):
+#     password_list += random.choice(symbols)
+# for char in range(0, nr_numbers):
+#     password_list += random.choice(numbers)
+# print(f"Your weak password is: {password_list}")
+# random.shuffle(password_list)
+# print(password_list)
+# str_password = "".join(password_list)
+# print(f"Your strong password is: {str_password}")
