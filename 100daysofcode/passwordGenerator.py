@@ -79,5 +79,9 @@ nr_numbers = int(input("How many numbers would you like?\n"))
 # print(f"Your weak password is: {password_list}")
 # random.shuffle(password_list)
 # print(password_list)
+# password = ""
+# for char in password_list:
+#     password += char
+# print(f"Your strong password is: {password}")
 # str_password = "".join(password_list)
 # print(f"Your strong password is: {str_password}")
