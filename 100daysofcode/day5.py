@@ -1,10 +1,10 @@
 # fruits = ["apple", "peach", "pear"]
-#
+
 # for fruit in fruits:
 #     print(fruit)
 #     print(fruit + " pie")
 
-brojevi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# brojevi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # max_broj = max(brojevi)
 # print("Najveći broj je:", max_broj)
