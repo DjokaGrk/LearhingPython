@@ -1,6 +1,17 @@
-def my_function():
-    print("Hello, World!")
-    print("This is my first function in Python.")
+# def turn_right():
+#     turn_left()
+#     turn_left()
+#     turn_left()
 
+# def jump():
+#     move()
+#     turn_left()
+#     move()
+#     turn_right()
+#     move()
+#     turn_right()
+#     move()
+#     turn_left()
 
-my_function()
+# while not at_goal():
+#     jump()
