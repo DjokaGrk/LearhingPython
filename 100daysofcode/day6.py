@@ -15,3 +15,37 @@
 
 # while not at_goal():
 #     jump()
+
+# def jump():
+#     move()
+#     turn_left()
+#     move()
+#     turn_left()
+#     turn_left()
+#     turn_left()
+#     move()
+#     turn_left()
+#     turn_left()
+#     turn_left()
+#     move()
+#     turn_left()
+# def jump_overwall():
+#     turn_left()
+#     move()
+#     turn_left()
+#     turn_left()
+#     turn_left()
+#     move()
+#     turn_left()
+#     turn_left()
+#     turn_left()
+#     move()
+#     turn_left()
+
+# while not at_goal():
+#     if front_is_clear():
+#         move()
+#     elif wall_in_front():
+#         jump_overwall()
+#     else:
+#         turn_left()
