@@ -39,20 +39,20 @@
 #     else:
 #         jump_overwall()
 
-# hurdle 4
-def turn_right():
-    turn_left()
-    turn_left()
-    turn_left()
+# # hurdle 4
+# def turn_right():
+#     turn_left()
+#     turn_left()
+#     turn_left()
 
-while not at_goal():
-    if right_is_clear():
-        turn_right()
-        move()
-    elif front_is_clear():
-        move()
-    elif wall_in_front():
-        turn_left()
-    elif front_is_clear() or wall_on_right():
-        move()
-    else: turn_right()
+# while not at_goal():
+#     if right_is_clear():
+#         turn_right()
+#         move()
+#     elif front_is_clear():
+#         move()
+#     elif wall_in_front():
+#         turn_left()
+#     elif front_is_clear() or wall_on_right():
+#         move()
+#     else: turn_right()
