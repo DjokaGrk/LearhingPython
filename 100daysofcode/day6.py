@@ -57,7 +57,7 @@
 #         move()
 #     else: turn_right()
 
-# hurdle 4 udemy techer way
+# hurdle 4 udemy teacher way
 # def turn_right():
 #     turn_left()
 #     turn_left()
