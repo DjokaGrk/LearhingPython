@@ -9,4 +9,4 @@ def is_leap_year(year):
         return "Year is leap"
 
 year = int(input("What year do you want to check? "))
-print(is_leap_year(year))2025
+print(is_leap_year(year))
