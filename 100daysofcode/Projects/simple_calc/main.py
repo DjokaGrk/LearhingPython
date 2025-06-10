@@ -21,7 +21,9 @@ calc_dic = {
 '*' : multiply,
 '/' : divide,
 }
+'''dictionary for operators'''
 def get_input(prompt):
+    """closes the calc at any prompt"""
     value = input(prompt)
     if value.lower() == 'close':
         print("Calculator closed.")
@@ -30,8 +32,11 @@ def get_input(prompt):
 
 def calc ():
     n1 = float(get_input("Enter the first number (or type 'close' to exit): "))
+    '''first number'''
     operator = get_input('Enter operator "+", "-", "*", or "/" (or type "close" to exit): ')
+    '''operator = "+", "-", "*", or "/" '''
     n2 = float(get_input("Enter the second number (or type 'close' to exit): "))
+    '''second number'''
 
     while operator not in calc_dic:
         print("invalid operator")
