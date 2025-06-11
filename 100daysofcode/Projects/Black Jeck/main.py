@@ -1,31 +1,57 @@
-# from art import logo
+from art import logo
 import random
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-start = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ").lower()
-def black_jeck():
-    if start == 'y':
-        # print(logo)
-        player_cards = random.sample(cards, 2)
+
+def black_jack():
+    print(logo)
+    print("Welcome to Blackjack!")
+    while True:
+        start = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ").lower()
+        if start != 'y':
+            print("You entered 'n'. Game will be closed.")
+            break
+
+        player_cards = [random.choice(cards), random.choice(cards)]
+        cpu_cards = [random.choice(cards), random.choice(cards)]
         player_score = sum(player_cards)
-        cpu_cards = random.sample(cards, 2)
-        print(f"Your card: {player_cards}, current score: {player_score}")
+        cpu_score = sum(cpu_cards)
+
+        print(f"Your cards: {player_cards}, current score: {player_score}")
         print(f"Computer's first card: {cpu_cards[0]}")
-    else:
-        print("you enter 'n' game will be closed")
-        return
-    while player_score < 21:
-        new_card = input(f"Do you want to play a game of Blackjack? Type 'y' or 'n': ")
-        if new_card == 'y':
-            player_card_new = random.choice(cards)
-            player_cards.append(player_card_new)
-            player_score = sum(player_cards)
-            print(f"Your card: {player_cards}, current score: {player_score}")
-            print(f"Computer's first card: {cpu_cards[0]}")
-        elif player_score > 21:
-            print(f"Your final hand: {player_cards}, final score: {player_score}")
-            print(f"You went over with {player_score}. You lose!")
-            break
+
+        while player_score < 21:
+            new_card = input("Type 'y' to get another card, 'n' to pass: ").lower()
+            if new_card == 'y':
+                player_cards.append(random.choice(cards))
+                player_score = sum(player_cards)
+                print(f"Your cards: {player_cards}, current score: {player_score}")
+                if player_score > 21:
+                    print(f"You went over with {player_score}. You lose!")
+                    break
+            else:
+                break
+
+        # Dealer logic: draw until 17 or more
+        while cpu_score < 17:
+            cpu_cards.append(random.choice(cards))
+            cpu_score = sum(cpu_cards)
+
+        print(f"Your final hand: {player_cards}, final score: {player_score}")
+        print(f"Cpu final hand: {cpu_cards}, final score: {cpu_score}")
+
+        if player_score > 21:
+            print("You went over. You lose!")
+        elif cpu_score > 21 or player_score > cpu_score:
+            print("You win!")
+        elif player_score < cpu_score:
+            print("You lose!")
         else:
+            print("Draw!")
+
+        play_again = input("Do you want to play another game? Type 'y' or 'n': ").lower()
+        if play_again != 'y':
+            print("Thanks for playing!")
             break
-black_jeck()
+
+black_jack()
