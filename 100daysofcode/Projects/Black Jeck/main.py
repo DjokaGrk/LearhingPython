@@ -3,6 +3,14 @@ import random
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
+def calculate_score(cards_list):
+    score = sum(cards_list)
+    # Adjust Ace from 11 to 1 if score is over 21
+    while score > 21 and 11 in cards_list:
+        cards_list[cards_list.index(11)] = 1
+        score = sum(cards_list)
+    return score
+
 def black_jack():
     print(logo)
     print("Welcome to Blackjack!")
@@ -14,8 +22,8 @@ def black_jack():
 
         player_cards = [random.choice(cards), random.choice(cards)]
         cpu_cards = [random.choice(cards), random.choice(cards)]
-        player_score = sum(player_cards)
-        cpu_score = sum(cpu_cards)
+        player_score = calculate_score(player_cards)
+        cpu_score = calculate_score(cpu_cards)
 
         print(f"Your cards: {player_cards}, current score: {player_score}")
         print(f"Computer's first card: {cpu_cards[0]}")
@@ -24,7 +32,7 @@ def black_jack():
             new_card = input("Type 'y' to get another card, 'n' to pass: ").lower()
             if new_card == 'y':
                 player_cards.append(random.choice(cards))
-                player_score = sum(player_cards)
+                player_score = calculate_score(player_cards)
                 print(f"Your cards: {player_cards}, current score: {player_score}")
                 if player_score > 21:
                     print(f"You went over with {player_score}. You lose!")
@@ -33,9 +41,10 @@ def black_jack():
                 break
 
         # Dealer logic: draw until 17 or more
+        cpu_score = calculate_score(cpu_cards)
         while cpu_score < 17:
             cpu_cards.append(random.choice(cards))
-            cpu_score = sum(cpu_cards)
+            cpu_score = calculate_score(cpu_cards)
 
         print(f"Your final hand: {player_cards}, final score: {player_score}")
         print(f"Cpu final hand: {cpu_cards}, final score: {cpu_score}")
