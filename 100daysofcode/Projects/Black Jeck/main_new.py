@@ -4,16 +4,6 @@ import random
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 def calculate_score(hand):
-    """
-    Calculates the total score of a hand in Blackjack.
-    Converts Ace (11) to 1 if the total score exceeds 21.
-
-    Args:
-        hand (list): List of integers representing card values.
-
-    Returns:
-        int: The calculated score for the hand.
-    """
     score = sum(hand)
     while score > 21 and 11 in hand:
         hand[hand.index(11)] = 1
@@ -21,14 +11,6 @@ def calculate_score(hand):
     return score
 
 def show_hands(player, cpu, hide_cpu=True):
-    """
-    Displays the player's and computer's cards and scores.
-
-    Args:
-        player (list): Player's hand.
-        cpu (list): Computer's hand.
-        hide_cpu (bool): If True, only shows the computer's first card.
-    """
     print(f"Your cards: {player}, current score: {calculate_score(player)}")
     if hide_cpu:
         print(f"Computer's first card: {cpu[0]}")
@@ -36,10 +18,6 @@ def show_hands(player, cpu, hide_cpu=True):
         print(f"Cpu final hand: {cpu}, final score: {calculate_score(cpu)}")
 
 def black_jack():
-    """
-    Main function to run the Blackjack game.
-    Handles the game loop, player and dealer turns, and determines the outcome.
-    """
     print(logo)
     print("Welcome to Blackjack!")
     while True:
