@@ -21,7 +21,6 @@ while True:
     print(logo)
     score = 0
     game_continue = True
-    item_a = get_random_data()
     item_b = get_random_data()
 
     while game_continue:
@@ -29,7 +28,7 @@ while True:
         Inner game loop for each comparison round.
         Swaps items, ensures uniqueness, and checks the player's guess.
         """
-        item_a, item_b = item_b, get_random_data()
+        item_a = item_b
         while item_a == item_b:
             item_b = get_random_data()
 
@@ -42,7 +41,8 @@ while True:
         )
 
         choice = input("Who has more followers? Type 'A' or 'B': ").upper()
-
+        print("\n" * 20)
+        print(logo)
         if (choice == "A" and item_a["follower_count"] > item_b["follower_count"]) or (
             choice == "B" and item_b["follower_count"] > item_a["follower_count"]
         ):
