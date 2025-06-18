@@ -65,7 +65,7 @@ def process_coins():
     quarters = int(input("How many quarters? ")) * 0.25
     dimes = int(input("How many dimes? ")) * 0.10
     nickels = int(input("How many nickels? ")) * 0.05
-    pennies = int(input("How many pennies? ")) * 0.01
+    pennies = 7 * 0.01
     money_inserted = quarters + dimes + nickels + pennies
     print(f"Total money inserted: ${money_inserted:.2f}")
     if money_inserted < MENU[choice]["cost"]:
@@ -84,6 +84,21 @@ while True:
     if choice == "off":
         check_secret_code()
         print("Turning off the machine. Goodbye!")
+        break
+    elif choice == "refill":
+        if water < 50 or milk < 50 or coffee < 18:
+            print("Not enough resources to make any coffee. Please refill.")
+            refill = input(
+                "Please add water, milk, and coffee to the machine and type 'on' to continue: "
+            )
+            if refill.lower() == "on":
+                water = resources["water"]
+                milk = resources["milk"]
+                coffee = resources["coffee"]
+                print("Resources have been refilled. You can now make coffee!")
+                continue
+        else:
+            print("Resources are sufficient. No need to refill.")
         break
     elif choice == "report":
         print("Water:", water, "ml")
