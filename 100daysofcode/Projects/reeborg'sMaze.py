@@ -1,18 +1,19 @@
-def turn_right():
+# Robergeorg's Maze Solver
+def right():
     turn_left()
     turn_left()
     turn_left()
 
+
+while front_is_clear():
+    move()
+turn_left()
+
 while not at_goal():
-    if front_is_clear():
+    if right_is_clear():
+        right()
         move()
-        if right_is_clear():
-            turn_right()
-        elif front_is_clear():
-             move()
-        else:
-             turn_left()
-    elif wall_in_front():
-        turn_right()
+    elif front_is_clear():
+        move()
     else:
-        move()
+        turn_left()
