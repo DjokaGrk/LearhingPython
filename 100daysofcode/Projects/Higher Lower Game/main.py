@@ -1,7 +1,7 @@
 from game_data import data
 import random
 from art import logo, vs
-
+from prettytable import  set_style
 
 def get_random_data():
     """
@@ -55,3 +55,10 @@ while True:
     if input("Do you want to play again? Type 'y' or 'n': ").lower() != "y":
         print("Thanks for playing!")
         break
+from prettytable import PrettyTable
+
+table = PrettyTable()
+table.set_style(align("l"))
+table.add_column("Pockemon Name", ["Pikachu", "Squirtle", "Charmander"])
+table.add_column("Type", ["Electric", "Water", "Fire"])
+print(table)
