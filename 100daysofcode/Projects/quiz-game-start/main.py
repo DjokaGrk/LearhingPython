@@ -1,3 +1,8 @@
+"""
+Main script to run the quiz game.
+Imports question data, creates question objects, and manages the quiz flow.
+"""
+
 from data import question_data
 from question_model import Question
 from quiz_brain import QuizBrain

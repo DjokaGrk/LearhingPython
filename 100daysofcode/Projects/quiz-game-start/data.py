@@ -1,3 +1,8 @@
+"""
+Contains the list of question data for the quiz game.
+Each question is a dictionary with 'text' and 'answer' keys.
+"""
+
 question_data = [
     {"text": "A slug's blood is green.", "answer": "True"},
     {"text": "The loudest animal is the African Elephant.", "answer": "False"},
