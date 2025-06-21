@@ -15,7 +15,7 @@
 #     if right_is_clear():
 #         right()
 #         move()
-#     elif front_is_clear():
+#     elif front_is_clear():jdfkljalksdf
 #         move()
 #     else:
 #         turn_left()
