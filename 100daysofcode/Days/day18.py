@@ -1,13 +1,13 @@
-from turtle import Turtle, Screen
+from turtle import Screen as S, Turtle as T
 
-pablo = Turtle()
-pablo.shape("turtle")
-pablo.color("seagreen")
+alex = T()
+alex.shape("turtle")
+alex.color("seagreen")
 
 for _ in range(4):
-    pablo.forward(100)
-    pablo.right(90)
+    alex.forward(100)
+    alex.right(90)
 
 
-screen = Screen()
+screen = S()
 screen.exitonclick()
