@@ -1,3 +1,4 @@
+# pip install colorgram.py
 import colorgram
 
 rgb_colors = []
@@ -13,4 +14,3 @@ for color in colors:
     rgb_colors.append(new_color)
 
 print(rgb_colors)
-
