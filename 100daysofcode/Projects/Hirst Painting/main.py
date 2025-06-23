@@ -1,18 +1,5 @@
-import colorgram
-
-rgb_colors = []
-colors = colorgram.extract(
-    r"C:\Users\Djokagrk\Documents\LearhingPython\100daysofcode\Projects\Hirst Painting\image.jpg",
-    30,
-)
-for color in colors:
-    r = color.rgb.r
-    g = color.rgb.g
-    b = color.rgb.b
-    new_color = (r, g, b)
-    rgb_colors.append(new_color)
-
-print(rgb_colors)
+from turtle import Turtle as T, Screen as S
+import random
 color_list = [
     (202, 164, 110),
     (149, 75, 50),
@@ -41,3 +28,24 @@ color_list = [
     (176, 192, 208),
     (168, 99, 102),
 ]
+alex = T()
+screen = S()
+alex.screen.colormode(255)
+alex.speed("fastest")
+alex.penup()
+alex.hideturtle()
+rows = 10
+cols = 10
+dot_size = 20
+spacing = 50
+start_x = -spacing * cols // 2
+start_y = -spacing * rows // 2
+# Draw grid
+for row in range(rows):
+    for col in range(cols):
+        alex.goto(start_x + col * spacing, start_y + row * spacing)
+        alex.dot(dot_size, random.choice(color_list))
+
+# Keep window open
+screen.exitonclick()
+
