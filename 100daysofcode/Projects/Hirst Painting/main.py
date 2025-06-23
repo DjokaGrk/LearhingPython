@@ -1,5 +1,6 @@
 from turtle import Turtle as T, Screen as S
 import random
+
 color_list = [
     (202, 164, 110),
     (149, 75, 50),
@@ -48,4 +49,3 @@ for row in range(rows):
 
 # Keep window open
 screen.exitonclick()
-
