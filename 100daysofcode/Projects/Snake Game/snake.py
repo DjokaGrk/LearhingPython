@@ -17,11 +17,28 @@ class Snake:
 
     def create_snake(self):
         for pos in START_POSITIONS:
-            segment = T("square")
-            segment.color("white")
-            segment.penup()
-            segment.goto(pos)
-            self.segments.append(segment)
+            self.add_segment(pos)
+
+    def add_segment(self, pos):
+        segment = T("square")
+        segment.color("white")
+        segment.penup()
+        segment.goto(pos)
+        self.segments.append(segment)
+
+    def extend(self):
+        # Add a new segment to the snake
+        self.add_segment(self.segments[-1].position())
+        # Move the new segment to the position of the last segment
+        # last_segment = self.segments[-2]
+        # self.segments[-1].goto(last_segment.xcor(), last_segment.ycor())
+
+    def reset(self):
+        for segment in self.segments:
+            segment.goto(1000, 1000)  # Move off-screen
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
 
     def move(self):
         for seg_num in range(len(self.segments) - 1, 0, -1):
