@@ -1,32 +1,29 @@
 from turtle import Turtle
 import random
-
 COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5
 MOVE_INCREMENT = 10
-SCREEN_HEIGHT = 600
-SCREEN_WIDTH = 600  # Set to 600 for your screen
-
+x = 300
 
 class CarManager:
-    def __init__(self):
-        self.cars = []  # Will store tuples: (car_turtle, move_distance)
+  def __init__(self):
+    self.all_cars = []
+    self.car_speed = STARTING_MOVE_DISTANCE
 
-    def create_car(self):
-        car = Turtle("square")
-        car.shapesize(stretch_wid=1, stretch_len=2)
-        car.color(random.choice(COLORS))
-        car.penup()
-        random_y = random.randint(-SCREEN_HEIGHT // 2 + 20, SCREEN_HEIGHT // 2 - 20)
-        car.goto(SCREEN_WIDTH // 2, random_y)
-        move_distance = STARTING_MOVE_DISTANCE  # Each car starts at 5 px/frame
-        self.cars.append((car, move_distance))
 
-    def move_cars(self):
-        for car, move_distance in self.cars:
-            car.backward(move_distance)
+  def create_car(self):
+    random_chance = random.randint(1, 6)
+    if random_chance == 1: # create car when is random_chance get 1
+      new_car = Turtle("square") #shape add here aswell
+      new_car.shapesize(stretch_wid=1, stretch_len=2)
+      new_car.penup()
+      new_car.color(random.choice(COLORS))
+      y = random.randint(-250, 250)
+      new_car.goto(x, y)
+      self.all_cars.append(new_car) # append new_car to all_cars
+  def move_cars(self):
+    for car in self.all_cars:
+      car.backward(self.car_speed)
+  def level_up(self):
+    self.car_speed += MOVE_INCREMENT
 
-    def level_up(self):
-        for i in range(len(self.cars)):
-            car, move_distance = self.cars[i]
-            self.cars[i] = (car, move_distance + MOVE_INCREMENT)

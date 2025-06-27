@@ -1,24 +1,26 @@
-from turtle import Turtle
-
+from turtle import Turtle as T
 STARTING_POSITION = (0, -280)
 MOVE_DISTANCE = 10
 FINISH_LINE_Y = 280
 
 
-class Player(Turtle):
+class Player(T):
     def __init__(self):
-        super().__init__()
-        self.shape("turtle")
-        self.penup()
-        self.goto(STARTING_POSITION)
-        self.setheading(90)
+      super().__init__()
+      self.shape("turtle")
+      self.penup()
+      self.go_to_start()
+      self.setheading(90)
 
-    def move_up(self):
-        self.forward(MOVE_DISTANCE)
-        self.speed("fastest")
-
-    def at_finish_line(self):
-        return self.ycor() > FINISH_LINE_Y
+    def move(self):
+      self.forward(MOVE_DISTANCE)
+      self.speed("fastest")
 
     def go_to_start(self):
-        self.goto(STARTING_POSITION)
+      self.goto(STARTING_POSITION)
+
+    def is_cross_line(self):
+      if self.ycor() > FINISH_LINE_Y:
+        return True
+      else:
+        return False

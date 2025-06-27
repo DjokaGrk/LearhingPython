@@ -1,35 +1,42 @@
 import time
-import random
 from turtle import Screen
 from player import Player
 from car_manager import CarManager
 from scoreboard import Scoreboard
 
+
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.tracer(0)
+
+
 player = Player()
 car_manager = CarManager()
 scoreboard = Scoreboard()
 
 screen.listen()
-screen.onkey(player.move_up, "w")
+screen.onkey(player.move, "w")
+
+
 game_is_on = True
 while game_is_on:
     time.sleep(0.1)
-    if random.randint(1, 6) == 1:  # Only ~1 in 6 frames will create a car
-        car_manager.create_car()
+    screen.update()
+
+    # Creating and moving the cars
+    car_manager.create_car()
     car_manager.move_cars()
+
     # Detect collision with car
-    for car, _ in car_manager.cars:
+    for car in car_manager.all_cars:
         if car.distance(player) < 20:
             game_is_on = False
             scoreboard.game_over()
-    # Detect successful crossing
-    if player.at_finish_line():
+
+    # Detect crossing the Turle
+    if player.is_cross_line():
         player.go_to_start()
         car_manager.level_up()
-        scoreboard.increase_level()
-    screen.update()
+        scoreboard.update_scoreboard()
 
 screen.exitonclick()
