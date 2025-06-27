@@ -17,7 +17,7 @@ class Scoreboard(Turtle):
     def update_scoreboard(self):
         self.clear()
         self.level += 1
-        self.write(f"level: {self.level}", font=FONT)
+        self.write(f"Level: {self.level}", font=FONT)
 
     def game_over(self):
         self.clear()  # This hides the previous scoreboard
