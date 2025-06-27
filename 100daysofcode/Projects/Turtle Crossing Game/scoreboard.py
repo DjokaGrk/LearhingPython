@@ -11,7 +11,7 @@ class Scoreboard(Turtle):
         self.hideturtle()  # Hide the turtle icon
         self.penup()
         self.color("black")
-        self.goto(-80, 260)
+        self.goto(-280, 260)
         self.update_scoreboard()
 
     def update_scoreboard(self):
@@ -21,8 +21,8 @@ class Scoreboard(Turtle):
 
     def game_over(self):
         self.clear()  # This hides the previous scoreboard
-        self.goto(-60, 0)
-        self.write("Game Over", font=FONT)
+        self.goto(0, 0)
+        self.write("Game Over", align="center", font=FONT)
         # Show the level below "Game Over"
-        self.goto(-100, -40)
-        self.write(f"Your  are level: {self.level}", font=FONT)
+        self.goto(0, -40)
+        self.write(f"Your  are level: {self.level}", align="center", font=FONT)
