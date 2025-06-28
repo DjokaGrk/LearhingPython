@@ -35,15 +35,15 @@ class Snake:
 
     def reset(self):
         for segment in self.segments:
-            segment.goto(1000, 1000)  # Move off-screen
+            segment.goto(1000, 1000)  # Move segments off-screen
         self.segments.clear()
         self.create_snake()
         self.head = self.segments[0]
 
     def move(self):
         for seg_num in range(len(self.segments) - 1, 0, -1):
-            # Segmets are moving last segment 1st and 2nd last then 1st
-            # so thay can move all together
+            # Segments are moving last segment 1st and 2nd last then 1st
+            # so they can move all together
             new_x = self.segments[seg_num - 1].xcor()
             new_y = self.segments[seg_num - 1].ycor()
             self.segments[seg_num].goto(new_x, new_y)

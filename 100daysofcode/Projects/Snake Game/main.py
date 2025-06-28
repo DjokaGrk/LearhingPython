@@ -45,18 +45,8 @@ def quit_program():
     quit_game = True
 
 
-# Difficulty selection
-DIFFICULTY_SPEEDS = {"normal": 0.13, "fast": 0.08, "fastest": 0.04}
-DIFFICULTY_MAP = {"1": "normal", "2": "fast", "3": "fastest"}
-
-difficulty_input = s.textinput(
-    "Difficulty", "Choose difficulty:\n1 - normal\n2 - fast\n3 - fastest"
-)
-if difficulty_input and difficulty_input in DIFFICULTY_MAP:
-    difficulty = DIFFICULTY_MAP[difficulty_input]
-else:
-    difficulty = "normal"
-snake_speed = DIFFICULTY_SPEEDS[difficulty]
+# Set a fixed snake speed (e.g., 0.13 seconds per move)
+snake_speed = 0.13
 
 # Key bindings
 s.listen()
