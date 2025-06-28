@@ -1,9 +1,10 @@
 # pip install colorgram.py
+from email.mime import image
 import colorgram
 
 rgb_colors = []
 colors = colorgram.extract(
-    r"C:\Users\kica8\Documents\LearhingPython\100daysofcode\Projects\Hirst Painting\image.jpg",
+    "image.jpg",
     30,
 )
 for color in colors:
