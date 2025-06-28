@@ -15,4 +15,3 @@ for name in names:
     new_letter = content.replace("[name]", stripped_name)
     with open(f"Output/ReadyToSend/{stripped_name}.txt", "w") as file:
         file.write(new_letter)
-        print(f"Letter for {stripped_name} created successfully.")
